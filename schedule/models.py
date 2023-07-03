@@ -1,3 +1,14 @@
 from django.db import models
 
-# Create your models here.
+
+
+class Group(Model.models):
+
+    def __init__(self):
+        pass
+
+class Schedule(Model.models):
+
+    def __init__(self):
+        pass
+

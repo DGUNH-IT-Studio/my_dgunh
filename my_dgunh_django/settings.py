@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'landing',
     'schedule',
+    'tg_web_app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
