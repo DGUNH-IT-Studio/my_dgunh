@@ -10,7 +10,12 @@ def signup(request):
         }
     return render(request, 'auth/signup.html')
 
-def login():
+def login(request):
     data = {
         }
     return render(request, 'auth/login.html')
+
+def logout(request):
+    data = {
+        }
+    return render(request, 'auth/logout.html')
