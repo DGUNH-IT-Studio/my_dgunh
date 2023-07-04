@@ -2,13 +2,33 @@ from django.db import models
 
 
 
-class Group(Model.models):
+# class Group(Model.models):
+#     '''
+#     '''
+    
+#     edu_lvl = ''
+#     faculty = ''
+#     profile = ''
+#     edu_form = ''
+#     course = ''
+#     stream = ''
+#     group = ''
+#     group_code = ''
 
-    def __init__(self):
-        pass
+#     def __str__(self):
+#         return self.group_code
 
-class Schedule(Model.models):
+#     class Meta:
+#         verbose_name = 'Group'
+#         verbose_name_plural = 'Groups'
 
-    def __init__(self):
-        pass
+# class Schedule(Model.models):
+#     '''
+#     '''
 
+#     group_code = ''
+#     schedule = ''
+
+#     class Meta:
+#         verbose_name = 'Schedule'
+#         verbose_name_plural = 'Schedules'

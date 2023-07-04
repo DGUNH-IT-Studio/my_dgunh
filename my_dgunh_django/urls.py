@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', include('landing.urls')),
+    path('', include('landing.urls')),
     path('schedule/', include('schedule.urls')),
-    path('tg_web_app/')
+    path('authentification/', include('authentification.urls')),
+    path('tg_web_app/', include('tg_web_app.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
