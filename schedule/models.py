@@ -15,7 +15,6 @@ class Group(models.Model):
     group = models.IntegerField()
     group_code = models.CharField(
         max_length = 256,
-        default = f'{edu_lvl}.{faculty}.{profile}.{edu_form}.{course}.{stream}.{group}',
         )
 
     def __str__(self):
