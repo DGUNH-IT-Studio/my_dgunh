@@ -1,4 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.contrib.auth.models import User
+from django.contrib import messages 
+
+
 
 def index(request):
     data = {
@@ -8,6 +12,27 @@ def index(request):
 def signup(request):
     data = {
         }
+    
+    if request.method == "POST":
+        username = request.POST['username']
+        first_name = request.POST['fname']
+        surname = request.POST['sname']
+        last_name = request.POST['lname']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+
+        new_user = User.objects.create(username, email, password1)
+        new_user.first_name = first_name
+        new_user.surname = surname
+        new_user.last_name = last_name
+
+        new_user.save()
+
+        messages.success(request, "Your account have been successfully created.")
+
+        return redirect('')
+
     return render(request, 'auth/signup.html')
 
 def login(request):

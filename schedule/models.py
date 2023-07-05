@@ -2,32 +2,35 @@ from django.db import models
 
 
 
-# class Group(Model.models):
-#     '''
-#     '''
+class Group(models.Model):
+    '''
+    '''
     
-#     edu_lvl = ''
-#     faculty = ''
-#     profile = ''
-#     edu_form = ''
-#     course = ''
-#     stream = ''
-#     group = ''
-#     group_code = ''
+    edu_lvl = models.BooleanField()
+    faculty = models.CharField(max_length=64)
+    profile = models.CharField(max_length=64)
+    edu_form = models.CharField(max_length=64)
+    course = models.IntegerField()
+    stream = models.IntegerField()
+    group = models.IntegerField()
+    group_code = models.CharField(
+        max_length = 256,
+        default = f'{edu_lvl}.{faculty}.{profile}.{edu_form}.{course}.{stream}.{group}',
+        )
 
-#     def __str__(self):
-#         return self.group_code
+    def __str__(self):
+        return self.group_code
 
-#     class Meta:
-#         verbose_name = 'Group'
-#         verbose_name_plural = 'Groups'
+    class Meta:
+        verbose_name = 'Group'
+        verbose_name_plural = 'Groups'
 
-# class Schedule(Model.models):
+# class Schedule(models.Model):
 #     '''
 #     '''
 
-#     group_code = ''
-#     schedule = ''
+#     group_code = models.ForeignKey()
+#     schedule = models.JSONField()
 
 #     class Meta:
 #         verbose_name = 'Schedule'
